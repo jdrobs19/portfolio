@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 :root{
     --primary-color: #00226B;
     --secondary-color: #B85E12;
@@ -81,31 +85,58 @@ header nav ul li a {
 
 .section-title{
     font-size: 28px;
-    border-right: 2px solid var(--teritary-color);
+    border-right: 5px solid var(--secondary-color);
+    text-align: right;
+}
+
+.section-title h2{
+    margin-right: 5px;
+}
+
+.section-wrapper{
+    display: flex;
+    width: 100%;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 10px;
+}
+.section-title-wrapper{
+    width: 10%;
+    display: grid;
+    flex-wrap: wrap;
+}
+
+.section-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
 }
 
 .work-grid-wrapper{
     display: flex;
     width: 100%;
-    justify-content: space-around;
 }
+
 .work-grid-container{
     width: 80%;
     display: grid;
     flex-wrap: wrap;
+    grid-template-columns: 1fr 1fr;
     color: var(--secondary-color);
+    grid-gap: 5px;
 }
 
 .work-grid-item{
-    margin: 5px;
     border: 2px solid var(--secondary-color);
     display: flex;
-    align-items: flex-start;
     justify-content: center;
+    align-items: center;
+    width: 60%;
 }
 
 .work-grid-item a img{
     height: 50%;
     width: 50%;
+    border: 1px solid var(--secondary-color);
 }
 
