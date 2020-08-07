@@ -85,17 +85,20 @@ header nav ul li a, .contact-info ul li{
 }
 
 .section-title{
-    font-size: 1.75vw;
+    font-size: 1.25vw;
     border-right: 5px solid var(--secondary-color);
     text-align: right;
 }
 
 .section-title h2{
+    color: var(--teritary-color);
     margin-right: 5px;
 }
 
 .section-info p{
-    font-size: 1.25vw;
+    font-size: 1.1vw;
+    color: var(--primary-color);
+    margin-left: 5px;
 }
 
 .section-wrapper{
@@ -129,30 +132,80 @@ header nav ul li a, .contact-info ul li{
     display: grid;
     flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
-    color: var(--secondary-color);
+    color: var(--teritary-color);
     grid-gap: 5px;
 }
 
 .work-grid-item{
-    
+    width: 500px;
+    height: 500px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.work-grid-item a img{
-    border: 2px solid var(--secondary-color);
-    width: 100%;
+.work-grid-item a{
+    text-decoration: none;
+    color: var(--teritary-color);
 }
 
-.work-grid-item img:hover{
-    background-color: rgba(137, 171, 245, 0.5);
+.section-info{
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.work-grid-item{
+    min-width: 100%;
+    min-height: 300px;
+    background-size: cover;
+    display: flex;
+    padding: 15px;
+    align-items: flex-end;
+    position: relative;
+}
+
+.work-grid-item::after{
+    content: "";
+    height: 100%;
+    width: 100%;
+    background: rgba(137, 171, 245, 0.5);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    opacity: 0.75;
+    transition: 0.5s;
+}
+
+.work-grid-item:hover::after{
+    opacity: 0.25;
+}
+
+.work-grid-item h3{
+    position: relative;
+    z-index: 9998;
+    transition: 0.6s;
+    font-size: 28px;
+    margin-bottom: 5px;
 }
 
 .work-1{
     grid-column: span 2;
     background-image: url("./images/run-buddy.png");
-    background-size: 100%;
+}
+
+.work-2{
+    background-image: url("./images/placeholder-1.jpg");
+}
+
+.work-3{
+    background-image: url("./images/placeholder-2.jpg");
+}
+
+.work-4{
+    background-image: url("./images/placeholder-3.jpg");
 }
 
 .contact-section{
@@ -190,10 +243,12 @@ header nav ul li a, .contact-info ul li{
         border-bottom: none;
   }
 
-@media screen and (max-width: 768px) {
-    .work-grid-container{
-        display: block;
+  .work-grid-container{
+    display: block;
     }
+}
+
+@media screen and (max-width: 768px) {
 
     .section-title{
         font-size: 1.8vw;
