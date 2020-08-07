@@ -38,6 +38,8 @@ header h1 {
 header a {
     text-decoration: none;
     color: var(--secondary-color);
+    border-bottom: 4px solid var(--secondary-color);
+    margin: 2px;
 }
 
 header nav {
@@ -118,10 +120,12 @@ header nav ul li a, .contact-info ul li{
 .work-grid-wrapper{
     display: flex;
     width: 100%;
+    margin-left: 5px;
 }
 
 .work-grid-container{
-    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
     display: grid;
     flex-wrap: wrap;
     grid-template-columns: repeat(3, 1fr);
@@ -130,16 +134,34 @@ header nav ul li a, .contact-info ul li{
 }
 
 .work-grid-item{
-    border: 2px solid var(--secondary-color);
+    
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .work-grid-item a img{
-    height: 100%;
+    border: 2px solid var(--secondary-color);
     width: 100%;
-    border: 1px solid var(--secondary-color);
+}
+
+.work-grid-item img:hover{
+    background-color: rgba(137, 171, 245, 0.5);
+}
+
+.work-1{
+    grid-column: span 2;
+    background-image: url("./images/run-buddy.png");
+    background-size: 100%;
+}
+
+.contact-section{
+    justify-content: center;
+}
+
+.contact-info a, .contact-info li {
+    text-decoration: none;
+    color: var(--teritary-color);
 }
 
 @media screen and (max-width: 980px) {
@@ -161,16 +183,47 @@ header nav ul li a, .contact-info ul li{
     }
   
     header nav ul li a {
-      font-size: 20px;
+      font-size: 24px;
     }
+
+    header a {
+        border-bottom: none;
   }
 
 @media screen and (max-width: 768px) {
     .work-grid-container{
-        grid-template-columns: 1fr;
+        display: block;
+    }
+
+    .section-title{
+        font-size: 1.8vw;
+    }
+    .section-info p, .contact-info a, .contact-info p{
+        font-size: 16px;
     }
   }
 
 @media screen and (max-width: 575px){
-      
-  }
+    .hero{
+        display: block;
+    }
+
+    .hero img{
+        width: 100%;
+        padding: 25px;
+    }
+
+    .hero h2{
+        font-size: 22px;
+        background-color: var(--primary-color);
+        margin: auto;
+        padding: 5px;
+        border-radius: 10px;
+        color: var(--secondary-color);
+        width: 50%;
+    }
+
+    .section-title{
+        font-size: 10px;
+    }
+}
